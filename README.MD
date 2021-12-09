@@ -14,11 +14,13 @@
 1.项目build.gradle文件中添加
 
 ```gradle
-    implementation 'com.github.Jun1orChan:DWebView-Android:1.2.0'
+    implementation 'com.github.Jun1orChan.DWebView-Android:dwebview:2.1.0'
     //如果使用注解自动注入JSBridge，各模块均需添加
-    implementation "com.github.Jun1orChan:dwebview-annotation:1.0.0"
-    annotationProcessor "com.github.Jun1orChan:dwebview-compiler:1.0.0"
+    implementation 'com.github.Jun1orChan.DWebView-Android:dwebview-annotation:2.1.0'
+    implementation 'com.github.Jun1orChan.DWebView-Android:dwebview-compiler:2.1.0'
     implementation 'com.github.getActivity:XXPermissions:13.2'
+    implementation 'com.github.Jun1orChan:Util-Android:1.2.0'
+    implementation 'com.github.Jun1orChan:Dialog-Android:1.2.0'
 ```
 
 ## 使用方法
