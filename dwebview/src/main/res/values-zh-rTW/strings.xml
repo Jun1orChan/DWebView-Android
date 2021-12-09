@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="dwebview_capture_image">相機拍照</string>
+    <string name="dwebview_capture_video">錄製視頻</string>
+    <string name="dwebview_capture_audio">音頻錄製</string>
+    <string name="dwebview_from_album">手機相冊</string>
+    <string name="dwebview_capture_image_failed">打開拍照界面失敗</string>
+    <string name="dwebview_capture_video_failed">打開視頻錄製失敗</string>
+    <string name="dwebview_capture_audio_failed">打開錄音界面失敗</string>
+    <string name="dwebview_file_choose">文件選擇</string>
+    <string name="dwebview_file_choose_failed">打開文件選擇界面失敗</string>
+    <string name="dwebview_get_media_file_failed">未獲取到媒體文件</string>
+    <string name="dwebview_camera_permission_denied_tips" formatted="false">請在“設置-應用管理-%s-應用權限”選項中，允許%s訪問相機和存儲空間</string>
+    <string name="dwebview_video_permission_denied_tips" formatted="false">請在“設置-應用管理-%s-應用權限”選項中，允許%s訪問相機、麥克風和存儲空間</string>
+    <string name="dwebview_audio_permission_denied_tips" formatted="false">請在“設置-應用管理-%s-應用權限”選項中，允許%s訪問麥克風和存儲空間</string>
+    <string name="dwebview_location_permission_denied_tips" formatted="false">請在“設置-應用管理-%s-應用權限”選項中，允許%s使用定位服務</string>
+    <string name="dwebview_btn_text_denied_setting">去設置</string>
+    <string name="dwebview_error">輕觸屏幕重新加載</string>
+    <string name="dwebview_tips">提示</string>
+    <string name="dwebview_dialog_download_content">是否下載文件：</string>
+    <string name="dwebview_download">下載</string>
+    <string name="dwebview_ok">確定</string>
+    <string name="dwebview_cancel">取消</string>
+    <string name="dwebview_ssl_error_tips">該網址證書不受信任，確定繼續訪問？</string>
+    <string name="dwebview_permission_explain_location" formatted="false">\u3000\u3000該網址正在申請定位權限；請確認是否申請？</string>
+    <string name="dwebview_apply_for">申請</string>
+</resources>

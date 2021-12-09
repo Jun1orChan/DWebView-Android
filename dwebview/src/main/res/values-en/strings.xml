@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="dwebview_capture_image">Picture Taking</string>
+    <string name="dwebview_capture_video">Video Filming</string>
+    <string name="dwebview_capture_audio">Audio Recording</string>
+    <string name="dwebview_from_album">Photo Album</string>
+    <string name="dwebview_capture_image_failed">Failed to open the picture taking interface.</string>
+    <string name="dwebview_capture_video_failed">Failed to open the video filming interface.</string>
+    <string name="dwebview_capture_audio_failed">Failed to open the audio recording interface.</string>
+    <string name="dwebview_file_choose">Select File</string>
+    <string name="dwebview_file_choose_failed">Failed to open the file selection interface.</string>
+    <string name="dwebview_get_media_file_failed">Failed to obtain the media file.</string>
+    <string name="dwebview_camera_permission_denied_tips" formatted="false">Please go to "Settings - Application Management - %s - Permissions" to allow %s to access to camera and storage.</string>
+    <string name="dwebview_video_permission_denied_tips" formatted="false">Please go to "Settings - Application Management - %s - Permissions" to allow %s to access to camera, microphone and storage.</string>
+    <string name="dwebview_audio_permission_denied_tips" formatted="false">Please go to "Settings - Application Management - %s - Permissions" to allow %s to access to microphone and storage.</string>
+    <string name="dwebview_location_permission_denied_tips" formatted="false">Please go to "Settings - Application Management - %s - Permissions" to allow %s to use location service.</string>
+    <string name="dwebview_btn_text_denied_setting">Setting</string>
+    <string name="dwebview_error">Tap to refresh.</string>
+    <string name="dwebview_tips">Note</string>
+    <string name="dwebview_dialog_download_content">Download File:</string>
+    <string name="dwebview_download">Download</string>
+    <string name="dwebview_ok">OK</string>
+    <string name="dwebview_cancel">Cancel</string>
+    <string name="dwebview_ssl_error_tips">This URL certificate is not secure. Are you sure you want to continue?</string>
+    <string name="dwebview_permission_explain_location" formatted="false">The website is applying for location permission. Confirm the application now?</string>
+    <string name="dwebview_apply_for">Apply</string>
+</resources>

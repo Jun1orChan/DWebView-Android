@@ -1,0 +1,26 @@
+<resources>
+    <string name="dwebview_capture_image">相机拍照</string>
+    <string name="dwebview_capture_video">录制视频</string>
+    <string name="dwebview_capture_audio">音频录制</string>
+    <string name="dwebview_from_album">手机相册</string>
+    <string name="dwebview_capture_image_failed">打开拍照界面失败</string>
+    <string name="dwebview_capture_video_failed">打开视频录制失败</string>
+    <string name="dwebview_capture_audio_failed">打开录音界面失败</string>
+    <string name="dwebview_file_choose">文件选择</string>
+    <string name="dwebview_file_choose_failed">打开文件选择界面失败</string>
+    <string name="dwebview_get_media_file_failed">未获取到媒体文件</string>
+    <string name="dwebview_camera_permission_denied_tips" formatted="false">请在“设置-应用管理-%s-应用权限”选项中，允许%s访问相机和存储空间</string>
+    <string name="dwebview_video_permission_denied_tips" formatted="false">请在“设置-应用管理-%s-应用权限”选项中，允许%s访问相机、麦克风和存储空间</string>
+    <string name="dwebview_audio_permission_denied_tips" formatted="false">请在“设置-应用管理-%s-应用权限”选项中，允许%s访问麦克风和存储空间</string>
+    <string name="dwebview_location_permission_denied_tips" formatted="false">请在“设置-应用管理-%s-应用权限”选项中，允许%s使用定位服务</string>
+    <string name="dwebview_btn_text_denied_setting">去设置</string>
+    <string name="dwebview_error">轻触屏幕重新加载</string>
+    <string name="dwebview_tips">提示</string>
+    <string name="dwebview_dialog_download_content">是否下载文件：</string>
+    <string name="dwebview_download">下载</string>
+    <string name="dwebview_ok">确定</string>
+    <string name="dwebview_cancel">取消</string>
+    <string name="dwebview_ssl_error_tips">该网址证书不受信任，确定继续访问？</string>
+    <string name="dwebview_permission_explain_location" formatted="false">\u3000\u3000该网址正在申请定位权限；请确认是否申请？</string>
+    <string name="dwebview_apply_for">申请</string>
+</resources>

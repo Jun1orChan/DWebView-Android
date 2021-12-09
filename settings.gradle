@@ -1,0 +1,4 @@
+include ':app', ':dwebview'
+include ':dwebview-annotation'
+include ':dwebview-compiler'
+include ':module_A'

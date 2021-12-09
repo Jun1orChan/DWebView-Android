@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/callJs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Native call Javascript"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/callNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Javascript call Native"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/commontest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="input标签测试"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/errorTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="error test"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bounceWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="bounceWeb"
+        android:textAllCaps="false" />
+</LinearLayout>
+

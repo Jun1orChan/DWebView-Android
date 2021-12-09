@@ -1,0 +1,9 @@
+plugins {
+    id 'java'
+}
+apply from: rootProject.file('gradle/publish.gradle')
+
+java {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}

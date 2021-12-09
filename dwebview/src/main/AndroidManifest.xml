@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nd.dwebview">
+
+    <application>
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowing"
+            android:value="true" />
+    </application>
+</manifest>

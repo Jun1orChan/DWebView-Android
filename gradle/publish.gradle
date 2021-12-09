@@ -1,0 +1,128 @@
+apply plugin: 'maven-publish'
+
+
+version = VERSION_NAME
+group = GROUP
+
+def isReleaseBuild() {
+    return VERSION_NAME.contains("SNAPSHOT") == false
+}
+
+def getRepositoryUrl() {
+    return isReleaseBuild() ? RELEASE_REPOSITORY_URL : SNAPSHOT_REPOSITORY_URL
+}
+
+def getRepositoryUsername() {
+    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+
+def getRepositoryPassword() {
+    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}
+
+if (project.getPlugins().hasPlugin('com.android.application') ||
+        project.getPlugins().hasPlugin('com.android.library')) {
+    task androidSourcesJar(type: Jar) {
+        archiveClassifier = 'sources'
+        from android.sourceSets.main.java.srcDirs
+    }
+
+    //生成文档注释
+    task androidJavadocs(type: Javadoc) {
+        failOnError = false
+        source = android.sourceSets.main.java.srcDirs
+    }
+
+    //将文档打包成jar
+    task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+        archiveClassifier.set('javadoc')
+        from androidJavadocs.destinationDir
+    }
+
+    tasks.withType(PublishToMavenRepository).each {
+        task -> task.dependsOn('assembleRelease', tasks.withType(PublishToMavenLocal))
+    }
+} else {
+    task sourcesJar(type: Jar) {
+        archiveClassifier = 'sources'
+        from sourceSets.main.allJava
+    }
+
+    task javadocJar(type: Jar) {
+        archiveClassifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+    tasks.withType(PublishToMavenRepository).each {
+        task ->
+            task.dependsOn(['classes', 'sourcesJar', 'javadocJar'],
+                    tasks.withType(PublishToMavenLocal))
+    }
+}
+
+//解决 JavaDoc 中文注释生成失败的问题
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+
+publishing {
+    //基本信息配置
+    publications {
+        mavenPub(MavenPublication) {
+            groupId = GROUP
+            artifactId = POM_ARTIFACT_ID
+            version = VERSION_NAME
+            if (project.getPlugins().hasPlugin('com.android.application') ||
+                    project.getPlugins().hasPlugin('com.android.library')) {
+                artifact androidSourcesJar
+                artifact androidJavadocsJar
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+                // pom文件中声明依赖，从而传递到使用方
+                pom.withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+                    configurations.implementation.allDependencies.each {
+                        // 避免出现空节点或 artifactId=unspecified 的节点
+                        if (it.group != null && (it.name != null && "unspecified" != it.name) && it.version != null) {
+                            println it.toString()
+                            def dependencyNode = dependenciesNode.appendNode('dependency')
+                            dependencyNode.appendNode('groupId', it.group)
+                            dependencyNode.appendNode('artifactId', it.name)
+                            dependencyNode.appendNode('version', it.version)
+                            dependencyNode.appendNode('scope', 'implementation')
+                        }
+                    }
+                }
+            } else {
+                from components.java
+                artifact sourcesJar
+                artifact javadocJar
+            }
+        }
+    }
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            url = getRepositoryUrl()
+            // 仓库用户名密码
+            credentials {
+                username = getRepositoryUsername()
+                password = getRepositoryPassword()
+            }
+        }
+    }
+}
+
+
+//tasks.withType(PublishToMavenRepository).each {
+//    task -> task.dependsOn('assembleRelease', tasks.withType(PublishToMavenLocal))
+//}
+
+//if (JavaVersion.current().isJava8Compatible()) {
+//    allprojects {
+//        tasks.withType(Javadoc) {
+//            options.addStringOption('Xdoclint:none', '-quiet')
+//        }
+//    }
+//}
